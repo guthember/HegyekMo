@@ -68,12 +68,33 @@ namespace HegyekMo
 
     }
 
+    static void Hatodik()
+    {
+      Console.Write("6. feladat: Kérek egy magasságot: ");
+      int mag = int.Parse(Console.ReadLine());
+      int i = 0;
+      while ( i < hegyek.Count && !(hegyek[i].Magassag > mag && hegyek[i].Hegyseg == "Börzsöny"))
+      {
+        i++;
+      }
+
+      if (i < hegyek.Count)
+      {
+        Console.WriteLine($"\tVan {mag}m magasabb hegycsúcs a Börzsönyben!");
+      }
+      else
+      {
+        Console.WriteLine($"\tNincs {mag}m magasabb hegycsúcs a Börzsönyben!");
+      }
+    }
+
     static void Main(string[] args)
     {
       Beolvasas();
       Harmadik();
       Negyedik();
       Otodik();
+      Hatodik();
 
       Console.ReadLine();
     }
