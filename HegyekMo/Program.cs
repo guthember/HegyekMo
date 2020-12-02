@@ -44,11 +44,36 @@ namespace HegyekMo
       Console.WriteLine($"4. feladat: Hegycsúcsok átlagos magassága: {atlag} m");
     }
 
+    static void Otodik()
+    {
+      Console.WriteLine("5. feladat: A legmagasabb hegycsúcs adatai:");
+      //hagyományos megoldás
+      //int max = 0;
+      //for (int i = 1; i < hegyek.Count; i++)
+      //{
+      //  if (hegyek[i].Magassag > hegyek[max].Magassag)
+      //  {
+      //    max = i;
+      //  }
+      //}
+      //Console.WriteLine($"\tNév: {hegyek[max].Nev}");
+      //Console.WriteLine($"\tHegység: {hegyek[max].Hegyseg}");
+      //Console.WriteLine($"\tMagasság: {hegyek[max].Magassag} m");
+      var max = (from h in hegyek
+                 orderby h.Magassag descending
+                 select h).ToArray();
+      Console.WriteLine($"\tNév: {max[0].Nev}");
+      Console.WriteLine($"\tHegység: {max[0].Hegyseg}");
+      Console.WriteLine($"\tMagasság: {max[0].Magassag} m");
+
+    }
+
     static void Main(string[] args)
     {
       Beolvasas();
       Harmadik();
       Negyedik();
+      Otodik();
 
       Console.ReadLine();
     }
