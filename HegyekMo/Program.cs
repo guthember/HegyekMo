@@ -10,6 +10,7 @@ namespace HegyekMo
   class Program
   {
     static List<Hegy> hegyek = new List<Hegy>();
+    const double LAB = 3.280839895;
 
     static void Beolvasas()
     {
@@ -90,19 +91,18 @@ namespace HegyekMo
 
     static void Hetedik()
     {
-      double lab = 3.280839895;
       //hagyományos megoldás
       //int nagyobb = 0;
 
       //foreach (var h in hegyek)
       //{
-      //  if (h.Magassag * lab > 3000)
+      //  if (h.Magassag * LAB > 3000)
       //  {
       //    nagyobb++;
       //  }
       //}
       int nagyobb = (from h in hegyek
-                     where h.Magassag * lab > 3000
+                     where h.Magassag * LAB > 3000
                      select h).ToList().Count;
       Console.WriteLine($"7. feladat: 3000 lábnál magasabb hegycsúcsok száma: {nagyobb}");
     }
@@ -130,6 +130,28 @@ namespace HegyekMo
 
     }
 
+    static string Atvalt(int mag)
+    {
+      double magLab = Math.Round(mag * LAB, 1);
+      return magLab.ToString().Replace(',','.');
+    }
+
+    static void Kilencedik()
+    {
+      Console.WriteLine("9. feladat: bukk-videk.txt");
+      StreamWriter ki = new StreamWriter("bukk-videk.txt");
+      ki.WriteLine("Hegycsúcs neve;Magasság láb");
+      foreach (var h in hegyek)
+      {
+        if (h.Hegyseg == "Bükk-vidék")
+        {
+          ki.WriteLine($"{h.Nev};{Atvalt(h.Magassag)}");
+        }
+      }
+
+      ki.Close();
+    }
+
     static void Main(string[] args)
     {
       Beolvasas();
@@ -139,6 +161,7 @@ namespace HegyekMo
       Hatodik();
       Hetedik();
       Nyolcadik();
+      Kilencedik();
 
       Console.ReadLine();
     }
