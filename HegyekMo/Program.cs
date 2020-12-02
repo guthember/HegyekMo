@@ -26,10 +26,14 @@ namespace HegyekMo
       be.Close();
     }
 
+    static void Harmadik()
+    {
+      Console.WriteLine($"3. feladat: Hegycsúcsok száma: {hegyek.Count} db");
+    }
     static void Main(string[] args)
     {
       Beolvasas();
-
+      Harmadik();
 
       Console.ReadLine();
     }
