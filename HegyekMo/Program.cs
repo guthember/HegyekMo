@@ -88,6 +88,26 @@ namespace HegyekMo
       }
     }
 
+    static void Hetedik()
+    {
+      double lab = 3.280839895;
+      //hagyományos megoldás
+      //int nagyobb = 0;
+
+      //foreach (var h in hegyek)
+      //{
+      //  if (h.Magassag * lab > 3000)
+      //  {
+      //    nagyobb++;
+      //  }
+      //}
+      int nagyobb = (from h in hegyek
+                     where h.Magassag * lab > 3000
+                     select h).ToList().Count;
+      Console.WriteLine($"7. feladat: 3000 lábnál magasabb hegycsúcsok száma: {nagyobb}");
+    }
+
+
     static void Main(string[] args)
     {
       Beolvasas();
@@ -95,6 +115,8 @@ namespace HegyekMo
       Negyedik();
       Otodik();
       Hatodik();
+      Hetedik();
+
 
       Console.ReadLine();
     }
