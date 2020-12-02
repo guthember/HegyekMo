@@ -107,6 +107,28 @@ namespace HegyekMo
       Console.WriteLine($"7. feladat: 3000 lábnál magasabb hegycsúcsok száma: {nagyobb}");
     }
 
+    static void Nyolcadik()
+    {
+      Dictionary<string, int> stat = new Dictionary<string, int>();
+
+      foreach (var h in hegyek)
+      {
+        if (stat.ContainsKey(h.Hegyseg))
+        {
+          stat[h.Hegyseg]++;
+        }
+        else
+        {
+          stat.Add(h.Hegyseg, 1);
+        }
+      }
+      Console.WriteLine("8. feladat: Hegység statisztika:");
+      foreach (var s in stat)
+      {
+        Console.WriteLine($"\t{s.Key} - {s.Value} db");
+      }
+
+    }
 
     static void Main(string[] args)
     {
@@ -116,7 +138,7 @@ namespace HegyekMo
       Otodik();
       Hatodik();
       Hetedik();
-
+      Nyolcadik();
 
       Console.ReadLine();
     }
