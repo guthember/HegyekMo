@@ -30,10 +30,25 @@ namespace HegyekMo
     {
       Console.WriteLine($"3. feladat: Hegycsúcsok száma: {hegyek.Count} db");
     }
+
+    static void Negyedik()
+    {
+      //hagyományos megoldás
+      //int ossz = 0;
+      //foreach (var h in hegyek)
+      //{
+      //  ossz += h.Magassag;
+      //}
+      //double atlag = (double)ossz / hegyek.Count;
+      double atlag = hegyek.Average(x => x.Magassag);
+      Console.WriteLine($"4. feladat: Hegycsúcsok átlagos magassága: {atlag} m");
+    }
+
     static void Main(string[] args)
     {
       Beolvasas();
       Harmadik();
+      Negyedik();
 
       Console.ReadLine();
     }
