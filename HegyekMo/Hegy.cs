@@ -8,6 +8,7 @@ namespace HegyekMo
 {
   class Hegy
   {
+
     private string nev;
 
     public string Nev

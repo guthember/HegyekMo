@@ -12,6 +12,7 @@ namespace HegyekMo
     static List<Hegy> hegyek = new List<Hegy>();
     const double LAB = 3.280839895;
 
+    #region Beolvasás
     static void Beolvasas()
     {
       StreamReader be = new StreamReader("hegyekMO.txt");
@@ -26,12 +27,16 @@ namespace HegyekMo
 
       be.Close();
     }
+    #endregion
 
+    #region Harmadik feladat
     static void Harmadik()
     {
       Console.WriteLine($"3. feladat: Hegycsúcsok száma: {hegyek.Count} db");
     }
+    #endregion
 
+    #region Negyedik feladat
     static void Negyedik()
     {
       //hagyományos megoldás
@@ -44,7 +49,9 @@ namespace HegyekMo
       double atlag = hegyek.Average(x => x.Magassag);
       Console.WriteLine($"4. feladat: Hegycsúcsok átlagos magassága: {atlag} m");
     }
+    #endregion
 
+    #region Ötödik feladat
     static void Otodik()
     {
       Console.WriteLine("5. feladat: A legmagasabb hegycsúcs adatai:");
@@ -68,13 +75,15 @@ namespace HegyekMo
       Console.WriteLine($"\tMagasság: {max[0].Magassag} m");
 
     }
+    #endregion
 
+    #region Hatodik feladat
     static void Hatodik()
     {
       Console.Write("6. feladat: Kérek egy magasságot: ");
       int mag = int.Parse(Console.ReadLine());
       int i = 0;
-      while ( i < hegyek.Count && !(hegyek[i].Magassag > mag && hegyek[i].Hegyseg == "Börzsöny"))
+      while (i < hegyek.Count && !(hegyek[i].Magassag > mag && hegyek[i].Hegyseg == "Börzsöny"))
       {
         i++;
       }
@@ -88,7 +97,9 @@ namespace HegyekMo
         Console.WriteLine($"\tNincs {mag}m magasabb hegycsúcs a Börzsönyben!");
       }
     }
+    #endregion
 
+    #region Hetedik feladat
     static void Hetedik()
     {
       //hagyományos megoldás
@@ -106,7 +117,9 @@ namespace HegyekMo
                      select h).ToList().Count;
       Console.WriteLine($"7. feladat: 3000 lábnál magasabb hegycsúcsok száma: {nagyobb}");
     }
+    #endregion
 
+    #region Nyolcadik feladat
     static void Nyolcadik()
     {
       Dictionary<string, int> stat = new Dictionary<string, int>();
@@ -129,13 +142,17 @@ namespace HegyekMo
       }
 
     }
+    #endregion
 
+    #region Átváltó metódus méterből lábba
     static string Atvalt(int mag)
     {
       double magLab = Math.Round(mag * LAB, 1);
-      return magLab.ToString().Replace(',','.');
+      return magLab.ToString().Replace(',', '.');
     }
+    #endregion
 
+    #region Kilencedi feladat
     static void Kilencedik()
     {
       Console.WriteLine("9. feladat: bukk-videk.txt");
@@ -150,7 +167,8 @@ namespace HegyekMo
       }
 
       ki.Close();
-    }
+    } 
+    #endregion
 
     static void Main(string[] args)
     {
