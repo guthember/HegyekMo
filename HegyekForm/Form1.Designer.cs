@@ -49,6 +49,7 @@ namespace HegyekForm
       this.btnHarom.TabIndex = 0;
       this.btnHarom.Text = "3. feladat";
       this.btnHarom.UseVisualStyleBackColor = true;
+      this.btnHarom.Click += new System.EventHandler(this.btnHarom_Click);
       // 
       // btnNegyedik
       // 
@@ -58,6 +59,7 @@ namespace HegyekForm
       this.btnNegyedik.TabIndex = 1;
       this.btnNegyedik.Text = "4. feladat";
       this.btnNegyedik.UseVisualStyleBackColor = true;
+      this.btnNegyedik.Click += new System.EventHandler(this.btnNegyedik_Click);
       // 
       // btnOtodik
       // 
@@ -67,6 +69,7 @@ namespace HegyekForm
       this.btnOtodik.TabIndex = 2;
       this.btnOtodik.Text = "5. feladat";
       this.btnOtodik.UseVisualStyleBackColor = true;
+      this.btnOtodik.Click += new System.EventHandler(this.btnOtodik_Click);
       // 
       // btnHatodik
       // 
@@ -76,6 +79,7 @@ namespace HegyekForm
       this.btnHatodik.TabIndex = 3;
       this.btnHatodik.Text = "6. feladat";
       this.btnHatodik.UseVisualStyleBackColor = true;
+      this.btnHatodik.Click += new System.EventHandler(this.btnHatodik_Click);
       // 
       // btnHetedik
       // 
@@ -85,6 +89,7 @@ namespace HegyekForm
       this.btnHetedik.TabIndex = 4;
       this.btnHetedik.Text = "7. feladat";
       this.btnHetedik.UseVisualStyleBackColor = true;
+      this.btnHetedik.Click += new System.EventHandler(this.btnHetedik_Click);
       // 
       // btnNyolcadik
       // 
@@ -94,6 +99,7 @@ namespace HegyekForm
       this.btnNyolcadik.TabIndex = 5;
       this.btnNyolcadik.Text = "8. feladat";
       this.btnNyolcadik.UseVisualStyleBackColor = true;
+      this.btnNyolcadik.Click += new System.EventHandler(this.btnNyolcadik_Click);
       // 
       // btnKilencedik
       // 
@@ -103,6 +109,7 @@ namespace HegyekForm
       this.btnKilencedik.TabIndex = 6;
       this.btnKilencedik.Text = "9. feladat";
       this.btnKilencedik.UseVisualStyleBackColor = true;
+      this.btnKilencedik.Click += new System.EventHandler(this.btnKilencedik_Click);
       // 
       // label1
       // 
